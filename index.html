@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to Version Control Using Git</title>
+
+		<meta name="description" content="An introduction to git and github for girl develop it pittsburgh">
+		<meta name="author" content="Jeremy Flores and Lindsey Bieda">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/lindsey.css" id="theme">
+		<link rel="stylesheet" href="css/theme/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="gdi"><p>pittsburgh</p></div>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="activity">
+					<h2>Download Class Materials</h2>
+					<p><a href="http://bit.ly/WMYSB4" id="download-link">http://bit.ly/WMYSB4</a></p>
+				</section>
+
+				<section>
+					<h2>Intro to Version Control Using Git</h2>
+					<h4>Marylou Lenhart</h4>
+				</section>
+
+				<section data-state="activity">
+					<h2>Introductions</h2>
+					<img src="images/intro.png" alt="introduction">
+				</section>
+
+				<section data-state="activity">
+					<h2>Please ask questions.</h2>
+					<img src="images/question.png" alt="questions">
+				</section>
+
+				<section>
+					<h2>Goals for the class</h2>
+					<ul>
+						<li>Basic understanding of what version control is</li>
+						<li>Basic understanding of what git is and how to use it</li>
+						<li>Knowledge of github and what it provides us</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Version Control System</h2>
+					<p>
+						A tool that assists in the management of changes to documents.
+					</p>
+				</section>
+
+				<section>
+					<h2>What does that mean?</h2>
+					<p>
+						<ul>
+							<li>You can make changes to documents and save those changes.</li>
+							<li>You can undo changes</li>
+							<li>You can include changes from other people*</li>
+							<li>You can see multiple change-sets simultaneously*</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Not just for programming</h2>
+					<p>
+						Anytime you are working on any set of documents that you are making changes to and want to save the state of, version 
+						control is extremely useful.
+					</p>
+				</section>
+
+				<section>
+					<h2><a href="http://git-scm.com/">Git</a></h2>
+					<p>
+						A <strong>distributed</strong> version control system.
+					</p>
+					<small>Distributed, in this case, basically means that we can have the same file existing in multiple locations</small>
+					<img src="images/Git-Logo.png" alt="git">
+					<img src="images/peer-to-peer.png" alt="distrubuted peer to peer network">
+				</section>
+
+				<section>
+					<h2><a href="http://github.com/">GitHub</a></h2>
+					<p>
+						A web service for programming projects that use Git.
+					</p>
+					<img src="images/GitHub_Logo.png" alt="github">
+				</section>
+				
+				<section>
+					<h2>Many Open Source projects hosted here</h2>
+					<img src="images/opensource2.png" alt="open source project on github">
+				</section>
+
+				<section>
+					<h2>Collaboration</h2>
+					<p>
+						<ul>
+							<li>Git makes collaboration easy</li>
+							<li>GitHub makes collaboration even easier</li>
+							<li>Easy to copy existing code, update, and share updates with others</li>
+						</ul>
+					</p>
+					<img src="images/hardcore-forking.gif" "forking a repo">
+				</section>
+
+				<section data-state="activity">
+					<h1>Tool Check</h1>
+					<h3>GitHub</h3>
+					<p>
+						<ul>
+							<li>If you haven't already create a GitHub account at <a href="http://github.com">github.com</a></li>
+							<li>Login to your account</li>
+							<li>(optional) Set your avatar at <a href="http://en.gravatar.com/">gravatar.com</a></li>
+							<li>View your GitHub profile page: <br>
+							http://github.com/<strong>your_username</strong></li>
+						</ul>
+						<img src="images/sample-avatar.png" alt="sample avatar of a sea otter licking glass">
+					</p>
+					<small>note: for gravatar use the same email your signed up for github with.</small>
+				</section>
+
+				<section>
+					<h2>Using Git in the CLI</h2>
+					<p>
+            Learning the Command Line Interface (CLI) for Git pays off in the long run.
+					</p>
+					<img src="images/Octocat.png" alt="octocat">
+				</section>
+
+				<section data-state="activity">
+					<h1>Tool Check</h1>
+					<h3>Downloading Git</h3>
+					<p>
+						<ul>
+              <li><a href="http://git-scm.com/download/mac">For Mac</a></li>
+              <li><a href="http://git-scm.com/download/win">For Windows</a></li>
+						</ul>
+					</p>
+				</section>
+
+				<section data-state="activity">
+					<h1>Tool Check</h1>
+					<h3>Open the Terminal</h3>
+					<ul>
+            <li>On Mac: Applications > Terminal</li>
+						<li>On Windows: Start Menu > All Programs > Git > Git Bash</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Repository</h2>
+					<h4>Where our files live</h4>
+					<small>Also referred to as a repo for short.</small>
+					<p>
+						Contains:
+						<ul>
+							<li>A record of the changes made to those files</li>
+							<li>Who made those changes</li>
+							<li>When those changes were made</li>
+						</ul>
+					</p>
+					
+				</section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Our first repository</h3>
+					<ul>
+            <li>Go into our Github account in the browser</li>
+					</ul>
+          <img src="images/github-page.png" />
+				</section>
+        
+        <section data-state="activity">
+          <h1>Activity</h1>
+          <h3>Creating a new repository</h3>
+          <ul>
+            <li>Create a new repository</li>
+          </ul>
+          <img src="images/github-page-new-dropdown.png" />
+        </section>
+        
+        <section data-state="activity">
+          <h1>Activity</h1>
+          <h3>Creating a new repository</h3>
+          <img src="images/github-new-repo-form.png" />
+        </section>
+
+        <section data-state="activity">
+          <h1>Activity</h1>
+          <h3>Creating a new repository</h3>
+          <img src="images/github-copy-clone-url.png" />
+        </section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Our first repository</h3>
+					<ul>
+            <li>Go back to the terminal (Mac) or bash (Win)</li>
+            <li>Type <code>git clone _paste_your_url_here_</code></li>
+            <li>Press enter</li>
+            <li>Go into the newly created directory by typing <br /><code>cd _name_of_your_repo_</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Commit</h2>
+					<p>
+						To save the state of a single or collection of changes.
+					</p>
+				</section>
+
+				<section>
+					<h2>How to make a commit with git</h2>
+					<p>
+						Whenever you make a change inside the folder where your repo is, git notices and will ask for 
+						a commit message in order to save the changes.
+					</p>
+					<aside class="notes">
+            Demonstrate on CLI how to do this. (Make a README)
+					</aside>
+				</section>
+
+				<section>
+					<h2>Commit Message</h2>
+					<p>
+						A note that describes what the commit is about.
+					</p>
+				</section>
+
+				<section>
+					<h2>Bad Commit Messages</h2>
+					<p>
+						<ul>
+							<li class="fragment">Whoops</li>
+							<li class="fragment">Fixed a thing</li>
+							<li class="fragment">I have no idea</li>
+							<li class="fragment">Everything works now</li>
+							<li class="fragment">I am so angry at the universe right now</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Better Commit Messages</h2>
+					<p>
+						<ul>
+							<li class="fragment">Added the missing read-me file</li>
+							<li class="fragment">Fix: Extranous semi-colon removed</li>
+							<li class="fragment">Moved the cat-pix folder inside the images folder</li>
+							<li class="fragment">Resolved the problem where content would not display</li>
+							<li class="fragment">Added a hack in the CSS to fix the bug with IE</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Things to keep in mind</h2>
+					<p>
+						<ul>
+							<li>Avoid being vague</li>
+							<li>Realize that not only are you communicating with future-you, but potientially others</li>
+							<li>When you can, focus on why you did something not what you did</li>
+						</ul>
+					</p>
+					<aside class="notes">
+						Look at commit messages for https://github.com/LindseyB/intro-to-git
+					</aside>
+				</section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>First commit</h3>
+					<ul>
+            <li>Create a new file named "README.md" inside the directory you just created,
+              and save it.</li>
+						<li>Commit your changes: <br>
+              Type <code>git add README.md</code> <br>
+              Type <code>git commit -m "<strong>Your Commit Message</strong>"</code> <br>
+              Make sure to provide a good description for your commit <br>
+              And remember to put your commit message in quotes</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Syncing</h2>
+					<p>Also known as pushing in the command-line world</p>
+					<p>Takes the changes you made on your computer and sends them off to the GitHub website</p>
+				</section>
+
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Sync your changes</h3>
+					<ul>
+            <li>Type <code>git push origin master</code></li>
+						<li>View the changes on GitHub: <br>
+							https://github.com/<strong>[username]</strong>/<strong>[repo name]</strong></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>A quick note on READMEs</h2>
+					<p>README files are generally provided with software or other files that provides information for the person opening it.</p>
+					<p>They can contain: 
+						<ul>
+							<li>How to use a piece of software</li>
+							<li>Who made the software</li>
+							<li>Any bugs in a chunk of software</li>
+						</ul>
+					</p>
+					<small>According to the <a href="http://catb.org/jargon/html/index.html">jargon file</a> the name comes from Lewis Carroll's <em>Alice's Adventures In Wonderland</em> 
+						when she encounters "Eat Me" and "Drink Me"</small>
+				</section>
+
+				<section>
+					<h2>READMEs on GitHub</h2>
+					<p>
+						<ul>
+							<li>Always will display on the main page on the repo</li>
+							<li>Are important to those viewing the project so they can see what it is about and how to use it</li>
+							<li>Supports the ability to make the content appear with styling using MarkDown</li>
+							<li>Example: <a href="https://github.com/hakimel/reveal.js#revealjs-">reveal.js README</a></li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>MarkDown</h2>
+					<p>
+						An extremely lightweight <a href="http://en.wikipedia.org/wiki/Markup_language">markup language</a>. 
+					</p>
+					<small><a href="http://daringfireball.net/projects/markdown/basics">Reference</a></small>
+				</section>
+
+				<section>
+					<h2>MarkDown Example</h2>
+					<pre><code># Title
+
+* item 1
+* item 2
+* item 3
+
+*italic text* __bold text__</code></pre>
+					<img src="images/markdown.png" alt="markdown result">
+				</section>
+
+				<section>
+					<h2>You Don't Have to Use MarkDown</h2>
+					<p>Plain text will still display perfectly fine</p>
+				</section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Add some content to your README</h3>
+					<ul>
+						<li>Open "README.md" in a text editor</li>
+						<li>Add any content that you desire with or without MarkDown</li>
+						<li>Commit your changes <br>
+							Make sure to provide a good description for your commit</li>
+						<li>View your new README on the GitHub website <br>
+							https://github.com/<strong>[username]</strong>/<strong>[repo name]</strong></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Commits don't need all files</h2>
+					<p>We can tell git that we only want to commit changes to some files rather than all.</p>
+				</section>
+
+				<section>
+					<h3>When do we want to only commit some files?</h3>
+					<p>
+						<ul>
+							<li>If we don't want to save our changes in other files.</li>
+							<li>If the other files are in some broken state.</li>
+							<li>If the other files are still "works in progress".</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>How do we commit only files we want?</h2>
+          <p>We only add the files we want!</p>
+				</section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Commit only one file</h3>
+					<ul>
+						<li>Create "NewFile.md"</li>
+						<li>Make some changes in "README.md"</li>
+            <li>Add only "NewFile.md" and then commit.</li>
+						<li>Then only this file will show up in the list of changes.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Branch</h2>
+					<p>
+						<ul>
+							<li>Where your <strong>changes</strong> live.</li>
+							<li>By default you start out in the <strong>master</strong> branch</li>
+							<li>Difference branches are like parallel universes: they may be very different from one another
+								or very similar and they exist at the same time.</li>
+						</ul>
+						<aside class="notes">
+							look at https://github.com/rails/rails
+						</aside>
+					</p>
+					<img src="images/currentbranch.png" alt="current branch">
+				</section>
+
+				<section>
+					<h2>Creating a new branch</h2>
+					<p>
+						When we create a new branch we keep all the old files as is, but are able to make changes that don't affect the <strong>master</strong> branch.
+					</p>
+					<img src="images/newbranch.png" alt="new branch">
+				</section>
+
+				<section>
+					<h2>Why would we do this?</h2>
+					<p>
+						<ul>
+							<li>Working on code we are unsure is correct.<br>
+								(e.g. bug fixes)</li>
+							<li>Working on a completely new version of something.</li>
+							<li>Working on a specific feature we want to add.</li>	
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>How do we create a new branch in Git?</h2>
+					<aside class="notes">
+						Demonstrate this within the terminal.
+					</aside>
+				</section>
+
+				<section>
+					<h2>How do we view a different branch on GitHub.com?</h2>
+					<aside class="notes">
+						Demonstrate this with https://github.com/rails/rails
+            <ol>
+              <li>git branch song</li>
+              <li>git checkout song</li>
+              <li>git branch</li>
+            </ol>
+            <p> OR </p>
+            <ol>
+              <li>git checkout -b song</li>
+              <li>git branch</li>
+            </ol>
+					</aside>
+				</section>
+
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Creating a new branch</h3>
+					<ul>
+						<li>Create a new branch named "song"</li>
+            <li><code>git co -b song</code></li>
+						<li>Add any song lyrics to your "README.md" file</li>
+						<li>Commit your changes</li>
+						<li>Push your changes</li>
+						<li>View your README on the GitHub website <br>
+							https://github.com/<strong>[username]</strong>/<strong>[repo name]</strong>
+							<small>note: it will still look the same</small>
+						</li>
+						<li>Change branches on the github website and now look at your README.md file.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Merging</h2>
+					<p>
+						When we take the changes of one branch and pull them into a second branch.
+					</p>
+					<img src="images/merge.png" alt="merge">
+				</section>
+
+				<section>
+					<h2>When do we want to merge?</h2>
+					<p>
+						<ul>
+							<li>When we have tested our new bug fixes and want to use it.</li>
+							<li>When we are ready to go live with new features.</li>
+							<li>When we are ready to go live with a new version.</li>
+							<li>When we want to combine two new features together.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>How do we merge in Git</h2>
+					<aside class="notes">
+						Demonstrate this within the terminal.
+            <ol>
+              <li>git checkout master</li>
+              <li>git merge song</li>
+            </ol>
+					</aside>
+				</section>
+
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Merging a branch</h3>
+					<ul>
+						<li>Merge the <strong>song</strong> branch into the <strong>master</strong> branch</li>
+            <li>Type <code>git checkout master</code></li>
+            <li>Type <code>git merge song</code></li>
+						<li>Commit your changes</li>
+						<li>View your README on the GitHub website <br>
+							https://github.com/<strong>[username]</strong>/<strong>[repo name]</strong>
+							<small>note: it should now have your song lyrics</small>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Rolling back commits</h2>
+					<p>Sometimes you want to undo a commit, but still <strong>keep your changes</strong>.</p>
+				</section>
+
+				<section>
+					<h2>How do we roll back in Git?</h2>
+					<aside class="notes">
+						Demonstrate this within the terminal.
+            <li>git reset --soft HEAD~1</li>
+					</aside>
+				</section>	
+
+				<section>
+					<h2>Reverting a commit</h2>
+					<p>Sometimes you want to completely undo a commit.</p>
+					<img src="images/undo-button.png" alt="undo button">
+				</section>
+
+				<section>
+					<h2>How do we revert in Git?</h2>
+					<aside class="notes">
+						Demonstrate this within the terminal.
+            <li>git log | head</li>
+            <li>git reset <strong>[hash for commit you want to revert to]</strong></li>
+					</aside>
+				</section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Reverting some changes</h3>
+					<ul>
+						<li>Open "README.md" and add "Changes I don't want" to it.</li>
+						<li>Commit your changes.</li>
+            <li>Find the hash for the commit you want to revert back to.</li>
+            <li><code>git log | head</code></li>
+            <li>Reset to that commit</li>
+            <li><code>git reset <strong>[hash for commit you want to revert to]</strong></code></li>
+					</ul>
+					<aside class="notes">
+            If there's time, maybe go into `git rebase -i`?
+					</aside>
+				</section>
+
+				<section>
+					<h2>Further Learning</h2>
+					<ol>
+						<li><a href="http://try.github.com">Code School - Try Git</a> (command-line based tutorial)</li>
+						<li><a href="http://git-scm.com/documentation">Git</a>'s official documentation</li>
+						<li><a href="http://gitimmersion.com">Git Immersion</a> a git walkthrough from the command-line</li>
+            <li><a href="http://vimeo.com/72762735">Deliberate Git</a> a talk about writing good commits</li>
+					</ol>
+					<img src="images/bookstack.png" alt="bookstack">
+				</section>				
+
+				<section>
+					<h1>THE END</h1>
+					<h3>Thank you!</h3>
+					<img src="images/octdrey-catburn.png" alt="Octdrey Catburn">
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
