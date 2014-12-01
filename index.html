@@ -240,7 +240,7 @@
 						a commit message in order to save the changes.
 					</p>
 					<aside class="notes">
-            Demonstrate on CLI how to do this. (Make a README)
+            Open up .git/config
 					</aside>
 				</section>
 
@@ -320,6 +320,9 @@
 						<li>View the changes on GitHub: <br>
 							https://github.com/<strong>[username]</strong>/<strong>[repo name]</strong></li>
 					</ul>
+						<aside class="notes">
+							look at https://github.com/rails/rails
+						</aside>
 				</section>
 
 				<section>
@@ -551,9 +554,34 @@
 					<h2>How do we roll back in Git?</h2>
 					<aside class="notes">
 						Demonstrate this within the terminal.
-            <li>git reset --soft HEAD~1</li>
 					</aside>
 				</section>	
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Resetting some changes</h3>
+					<ul>
+						<li>Open "README.md" and add "Changes I don't want" to it.</li>
+						<li>Commit your changes.</li>
+            <li>Reset that commit</li>
+            <li><code>git reset --soft HEAD~1</code></li>
+            <li><code>git status</code></li>
+					</ul>
+				</section>
+
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Reverting some changes</h3>
+					<ul>
+						<li>Open "README.md" and add "Changes I don't want" to it.</li>
+						<li>Commit your changes.</li>
+            <li>Find the hash for the commit you want to revert back to.</li>
+            <li><code>git log | head</code></li>
+            <li>Revert to that commit</li>
+            <li><code>git revert -n <strong>[hash for commit you want to revert to]</strong></code></li>
+            <li><code>git status</code></li>
+					</ul>
+				</section>
 
 				<section>
 					<h2>Reverting a commit</h2>
@@ -565,8 +593,6 @@
 					<h2>How do we revert in Git?</h2>
 					<aside class="notes">
 						Demonstrate this within the terminal.
-            <li>git log | head</li>
-            <li>git reset <strong>[hash for commit you want to revert to]</strong></li>
 					</aside>
 				</section>
 
@@ -578,8 +604,21 @@
 						<li>Commit your changes.</li>
             <li>Find the hash for the commit you want to revert back to.</li>
             <li><code>git log | head</code></li>
-            <li>Reset to that commit</li>
-            <li><code>git reset <strong>[hash for commit you want to revert to]</strong></code></li>
+            <li>Revert to that commit</li>
+            <li><code>git revert <strong>[hash for commit you want to revert to]</strong></code></li>
+            <li><code>git status</code></li>
+					</ul>
+				</section>
+        
+				<section data-state="activity">
+					<h1>Activity</h1>
+					<h3>Resetting some changes</h3>
+					<ul>
+						<li>Open "README.md" and add "Changes I don't want" to it.</li>
+						<li>Commit your changes.</li>
+            <li>Reset that commit</li>
+            <li><code>git reset --hard HEAD~1</code></li>
+            <li><code>git status</code></li>
 					</ul>
 					<aside class="notes">
             If there's time, maybe go into `git rebase -i`?
