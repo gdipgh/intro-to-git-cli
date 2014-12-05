@@ -38,6 +38,8 @@
 				<section data-state="activity">
 					<h2>Download Class Materials</h2>
 					<p><a href="http://bit.ly/127ww99" id="download-link">http://bit.ly/127ww99</a></p>
+          <p><a href="http://www.sublimetext.com/2" id="download-link">Sublime Text 2</a></p>
+          <p>(optional)</p>
 				</section>
 
 				<section>
@@ -61,6 +63,7 @@
 						<li>Basic understanding of what version control is</li>
 						<li>Basic understanding of what git is and how to use it</li>
 						<li>Knowledge of github and what it provides us</li>
+            <li>Knowledge of the command line interface</li>
 					</ul>
 				</section>
 
@@ -210,6 +213,16 @@
         </section>
 
         <section data-state="activity">
+          <h1>ls</h1>
+          <img src="images/bash-ls.png" />
+        </section>
+
+        <section data-state="activity">
+          <h1>Git Status</h1>
+          <img src="images/git-status-1.png" />
+        </section>
+
+        <section data-state="activity">
           <h1>Activity</h1>
           <h3>Creating a new repository</h3>
           <img src="images/github-copy-clone-url.png" />
@@ -226,6 +239,11 @@
 					</ul>
 				</section>
 
+        <section data-state="activity">
+          <h1>ls</h1>
+          <img src="images/bash-ls.png" />
+        </section>
+
 				<section>
 					<h2>Commit</h2>
 					<p>
@@ -236,13 +254,17 @@
 				<section>
 					<h2>How to make a commit with git</h2>
 					<p>
-						Whenever you make a change inside the folder where your repo is, git notices and will ask for 
-						a commit message in order to save the changes.
+            Whenever you make a change inside the folder where your repo is, git notices
+            and will let you know what files have been changed. Making a commit will then
+            require a commit message.
 					</p>
-					<aside class="notes">
-            Open up .git/config
-					</aside>
 				</section>
+
+        <section data-state="activity">
+          <h1>Git Status</h1>
+          <img src="images/git-status-1.png" />
+          <img src="images/git-status-2.png" />
+        </section>
 
 				<section>
 					<h2>Commit Message</h2>
@@ -269,10 +291,11 @@
 					<p>
 						<ul>
 							<li class="fragment">Added the missing read-me file</li>
-							<li class="fragment">Fix: Extranous semi-colon removed</li>
+							<li class="fragment">Fix: Extraneous semi-colon removed</li>
 							<li class="fragment">Moved the cat-pix folder inside the images folder</li>
 							<li class="fragment">Resolved the problem where content would not display</li>
 							<li class="fragment">Added a hack in the CSS to fix the bug with IE</li>
+              <li class="fragment"><a href="https://github.com/erlang/otp/wiki/Writing-good-commit-messages">Writing Good Commit Messages</a></li>
 						</ul>
 					</p>
 				</section>
@@ -295,8 +318,8 @@
 					<h1>Activity</h1>
 					<h3>First commit</h3>
 					<ul>
-            <li>Create a new file named "README.md" inside the directory you just created,
-              and save it.</li>
+            <li>Open up the file named "README.md" inside the directory you just created,
+              make a change, and save it.</li>
 						<li>Commit your changes: <br>
               Type <code>git add README.md</code> <br>
               Type <code>git commit -m "<strong>Your Commit Message</strong>"</code> <br>
@@ -306,8 +329,8 @@
 				</section>
 
 				<section>
-					<h2>Syncing</h2>
-					<p>Also known as pushing in the command-line world</p>
+					<h2>Syncing your changes</h2>
+          <p>Also known as <strong>pushing</strong> in the command-line world</p>
 					<p>Takes the changes you made on your computer and sends them off to the GitHub website</p>
 				</section>
 
